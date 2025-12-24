@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-cream text-dark;
+  font-family: 'Fredoka One', cursive;
+}
+
+.cartoon-text {
+  font-family: 'Fredoka One', cursive;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1),
+               6px 6px 0px rgba(0, 0, 0, 0.05);
+  letter-spacing: -0.02em;
+}
+
+.cartoon-title {
+  font-family: 'Bungee', cursive;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15),
+               8px 8px 0px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.02em;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-bg {
+  background: radial-gradient(circle at top, rgba(247,168,184,0.5), transparent 55%),
+              radial-gradient(circle at bottom, rgba(131,200,188,0.5), transparent 55%);
+}
+
+.chart-line {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+.chart-line::before {
+  content: "";
+  position: absolute;
+  inset: 40% 4%;
+  border-radius: 9999px;
+  border: 2px solid rgba(255,255,255,0.6);
+  transform-origin: left;
+  transform: skewY(-8deg);
+}
+
+.smoke-dot {
+  box-shadow: 0 0 24px rgba(255,255,255,0.6);
+}
+
+.cartoon-tv {
+  border: 8px solid #2d2d2d;
+  border-radius: 20px;
+  box-shadow: 
+    0 0 0 4px #1a1a1a,
+    0 0 0 12px #3a3a3a,
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(0, 0, 0, 0.2);
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.cartoon-tv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cartoon-tv::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 2;
+}
