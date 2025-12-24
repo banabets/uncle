@@ -25,13 +25,13 @@ export default function Home() {
   const handleCopy = async () => {
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText("xxxxxxxxxxxxxxxxxxxxxxxxxxxpump");
+        await navigator.clipboard.writeText("F2MdXnUY7q4Vb8jvc94K2pERDfnE4Ft61T4Gyccxpump");
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       } else {
         // Fallback for browsers that don't support clipboard API
         const textArea = document.createElement("textarea");
-        textArea.value = "xxxxxxxxxxxxxxxxxxxxxxxxxxxpump";
+        textArea.value = "F2MdXnUY7q4Vb8jvc94K2pERDfnE4Ft61T4Gyccxpump";
         textArea.style.position = "fixed";
         textArea.style.opacity = "0";
         document.body.appendChild(textArea);
