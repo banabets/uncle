@@ -4,31 +4,50 @@ import { useEffect } from "react";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
-    // Create a round favicon dynamically
-    const canvas = document.createElement('canvas');
-    canvas.width = 32;
-    canvas.height = 32;
-    const ctx = canvas.getContext('2d');
-    
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    img.onload = () => {
-      // Create circular clipping
-      ctx.beginPath();
-      ctx.arc(16, 16, 16, 0, 2 * Math.PI);
-      ctx.clip();
-      
-      // Draw the image
-      ctx.drawImage(img, 0, 0, 32, 32);
-      
-      // Update favicon
-      const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-      link.type = 'image/png';
-      link.rel = 'icon';
-      link.href = canvas.toDataURL();
-      document.getElementsByTagName('head')[0].appendChild(link);
-    };
-    img.src = '/unicz.png';
+    // Only run on client side
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      // Create a round favicon dynamically
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = 32;
+        canvas.height = 32;
+        const ctx = canvas.getContext('2d');
+        
+        if (ctx) {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          img.onload = () => {
+            try {
+              // Create circular clipping
+              ctx.beginPath();
+              ctx.arc(16, 16, 16, 0, 2 * Math.PI);
+              ctx.clip();
+              
+              // Draw the image
+              ctx.drawImage(img, 0, 0, 32, 32);
+              
+              // Update favicon
+              const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+              link.type = 'image/png';
+              link.rel = 'icon';
+              link.href = canvas.toDataURL();
+              const head = document.getElementsByTagName('head')[0];
+              if (head) {
+                head.appendChild(link);
+              }
+            } catch (e) {
+              console.error('Error creating favicon:', e);
+            }
+          };
+          img.onerror = () => {
+            // Silently fail if image can't load
+          };
+          img.src = '/unicz.png';
+        }
+      } catch (e) {
+        // Silently fail if canvas is not supported
+      }
+    }
   }, []);
 
   return (
