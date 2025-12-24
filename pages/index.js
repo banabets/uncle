@@ -25,13 +25,13 @@ export default function Home() {
   const handleCopy = async () => {
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText("F2MdXnUY7q4Vb8jvc94K2pERDfnE4Ft61T4Gyccxpump");
+        await navigator.clipboard.writeText("xxxxxxxxxxxxxxxxxxxxxxxxxxxpump");
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       } else {
         // Fallback for browsers that don't support clipboard API
         const textArea = document.createElement("textarea");
-        textArea.value = "F2MdXnUY7q4Vb8jvc94K2pERDfnE4Ft61T4Gyccxpump";
+        textArea.value = "xxxxxxxxxxxxxxxxxxxxxxxxxxxpump";
         textArea.style.position = "fixed";
         textArea.style.opacity = "0";
         document.body.appendChild(textArea);
@@ -74,14 +74,9 @@ export default function Home() {
             <a href="#tokenomics" className="px-4 py-2 rounded-xl text-white hover:text-pink hover:bg-white/10 transition-all">Tokenomics</a>
             <a href="#community" className="px-4 py-2 rounded-xl text-white hover:text-pink hover:bg-white/10 transition-all">Community</a>
           </div>
-          <a 
-            href="https://pump.fun/coin/F2MdXnUY7q4Vb8jvc94K2pERDfnE4Ft61T4Gyccxpump" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-xl bg-turquoise text-white text-base font-black cartoon-text border-2 border-turquoise/50 shadow-lg shadow-turquoise/40 hover:bg-pink hover:border-pink/50 transition-all"
-          >
+          <button className="px-5 py-2.5 rounded-xl bg-turquoise text-white text-base font-black cartoon-text border-2 border-turquoise/50 shadow-lg shadow-turquoise/40 hover:bg-pink hover:border-pink/50 transition-all">
             BUY ON PUMP.FUN
-          </a>
+          </button>
         </nav>
       </header>
 
@@ -100,17 +95,14 @@ export default function Home() {
               >
                 Solana's Chillest <span className="text-pink md:text-[120px]">Unicorn</span>
               </motion.h1>
-              <motion.a
-                href="https://pump.fun/coin/F2MdXnUY7q4Vb8jvc94K2pERDfnE4Ft61T4Gyccxpump"
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.button
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="px-8 py-4 rounded-2xl bg-turquoise text-white font-black text-lg md:text-xl cartoon-text border-4 border-turquoise/50 shadow-xl shadow-turquoise/40 hover:bg-pink hover:border-pink/50 transition-all mt-4 mx-auto inline-block"
+                className="px-8 py-4 rounded-2xl bg-turquoise text-white font-black text-lg md:text-xl cartoon-text border-4 border-turquoise/50 shadow-xl shadow-turquoise/40 hover:bg-pink hover:border-pink/50 transition-all mt-4 mx-auto"
               >
                 BUY ON PUMP.FUN
-              </motion.a>
+              </motion.button>
             </div>
             
             {/* Animated Uncle */}
@@ -169,7 +161,7 @@ export default function Home() {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="inline-flex items-center gap-2 md:gap-4 px-3 py-2.5 md:px-6 md:py-5 rounded-xl md:rounded-2xl bg-white/10 border-2 border-pink/40 mx-auto mt-8 md:mt-12 max-w-[90%] md:max-w-none"
             >
-              <span className="font-semibold text-sm md:text-xl lg:text-2xl text-white break-all">CA: F2MdXnUY7q4Vb8jvc94K2pERDfnE4Ft61T4Gyccxpump</span>
+              <span className="font-semibold text-sm md:text-xl lg:text-2xl text-white break-all">CA: xxxxxxxxxxxxxxxxxxxxxxxxxxxpump</span>
               <button
                 onClick={handleCopy}
                 className="p-1.5 md:p-2.5 rounded-lg md:rounded-xl bg-turquoise/90 text-white font-black cartoon-text border-2 border-turquoise/60 hover:bg-pink hover:border-pink/60 transition-all shadow-lg flex-shrink-0"
